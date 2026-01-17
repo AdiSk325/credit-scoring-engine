@@ -214,19 +214,17 @@ class BinningEvaluator:
         results : DataFrame
             Comprehensive quality metrics
         """
-        evaluator = BinningEvaluator()
-        
         # Monotonicity
-        mono_score, is_mono, direction = evaluator.evaluate_monotonicity(binned_X, y)
+        mono_score, is_mono, direction = BinningEvaluator.evaluate_monotonicity(binned_X, y)
         
         # Chi-square test
-        chi2, p_value = evaluator.chi_square_test(binned_X, y)
+        chi2, p_value = BinningEvaluator.chi_square_test(binned_X, y)
         
         # Balance
-        gini, min_prop = evaluator.calculate_bin_balance(binned_X)
+        gini, min_prop = BinningEvaluator.calculate_bin_balance(binned_X)
         
         # Entropy
-        entropy = evaluator.calculate_entropy(binned_X, y)
+        entropy = BinningEvaluator.calculate_entropy(binned_X, y)
         
         results = pd.DataFrame({
             'metric': [
