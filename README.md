@@ -7,6 +7,16 @@ A comprehensive Python library for building credit scoring models with a focus o
 - **d-score** calculations for discrimination measurement
 - **Model evaluation** metrics (Gini, KS, ROC-AUC, PSI)
 
+## Documentation
+
+For detailed methodological background, please refer to:
+- **[METHODOLOGICAL_README.md](METHODOLOGICAL_README.md)** - Comprehensive methodological documentation covering literature, reject inference, calibration, and implementation recommendations
+- **[docs/references/](docs/references/)** - Additional reference materials:
+  - [literature.md](docs/references/literature.md) - Full bibliography and academic papers
+  - [reject_inference.md](docs/references/reject_inference.md) - Detailed documentation of reject inference methods
+  - [calibration.md](docs/references/calibration.md) - Calibration and score scaling documentation
+  - [metrics.md](docs/references/metrics.md) - Metrics documentation (Gini, KS, PSI, IV, etc.)
+
 ## Features
 
 ### 1. Binning Module
@@ -327,6 +337,9 @@ MIT License
 
 ## References
 
+For a comprehensive bibliography and academic references, see [docs/references/literature.md](docs/references/literature.md).
+
+Key references include:
 - Siddiqi, N. (2006). Credit Risk Scorecards: Developing and Implementing Intelligent Credit Scoring.
 - Anderson, R. (2007). The Credit Scoring Toolkit: Theory and Practice for Retail Credit Risk Management and Decision Automation.
 - Thomas, L. C., Edelman, D. B., & Crook, J. N. (2002). Credit Scoring and Its Applications.
