@@ -191,14 +191,14 @@ def parceling_inference(df_accepted, df_rejected, existing_model,
     random_state : int
         Seed dla powtarzalności wyników
     """
-    np.random.seed(random_state)
+    rng = np.random.default_rng(random_state)
     df_rejected = df_rejected.copy()
     
     # Predykcja prawdopodobieństwa Bad dla odrzuconych
     prob_bad = existing_model.predict_proba(df_rejected[features])[:, 1]
     
     # Losowe przypisanie klasy zgodnie z prawdopodobieństwem
-    random_vals = np.random.uniform(0, 1, size=len(df_rejected))
+    random_vals = rng.uniform(0, 1, size=len(df_rejected))
     df_rejected[target_col] = (random_vals < prob_bad).astype(int)
     
     df_combined = pd.concat([df_accepted, df_rejected], ignore_index=True)

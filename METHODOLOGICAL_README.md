@@ -223,6 +223,8 @@ Gdzie:
 ### Obliczanie Offset i Factor
 
 ```python
+import numpy as np
+
 def calculate_scaling_params(base_score, base_odds, pdo):
     """
     Oblicza parametry skalowania dla scorecardu
@@ -241,8 +243,6 @@ def calculate_scaling_params(base_score, base_odds, pdo):
     offset, factor : tuple
         Parametry do formuły Score = Offset + Factor × ln(odds)
     """
-    import numpy as np
-    
     factor = pdo / np.log(2)
     offset = base_score - factor * np.log(base_odds)
     
@@ -267,8 +267,6 @@ def calculate_score(probability, offset, factor):
     score : float or array
         Punktacja scoringowa
     """
-    import numpy as np
-    
     # Zabezpieczenie przed p=0 lub p=1
     probability = np.clip(probability, 1e-10, 1 - 1e-10)
     
